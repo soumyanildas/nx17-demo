@@ -1,0 +1,100 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": { }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "parserOptions": {
+        "project": ["./tsconfig.*?.json"]
+      },
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-inferrable-types": [
+          "error",
+          {
+            "ignoreParameters": true
+          }
+        ],
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-shadow": [
+          "error",
+          {
+            "hoist": "all"
+          }
+        ],
+        "@typescript-eslint/no-unused-expressions": "warn",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/quotes": ["warn", "single"],
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "@typescript-eslint/unified-signatures": "error",
+        "brace-style": ["error", "1tbs"],
+        "constructor-super": "error",
+        "curly": "error",
+        "eol-last": "error",
+        "eqeqeq": ["error", "smart"],
+        "guard-for-in": "error",
+        "import/no-deprecated": "warn",
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ],
+        "no-bitwise": "error",
+        "no-caller": "error",
+        "no-console": "error",
+        "no-debugger": "error",
+        "no-eval": "error",
+        "no-fallthrough": "error",
+        "no-new-wrappers": "error",
+        "no-throw-literal": "error",
+        "no-trailing-spaces": "error",
+        "no-undef-init": "error",
+        "no-unused-labels": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "radix": "error",
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "markers": ["/"]
+          }
+        ],
+        "no-unused-vars": "error",
+        "no-duplicate-imports": "error",
+        "space-before-blocks": "error",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}
